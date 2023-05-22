@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  seq:
+    build: .
+    container_name: seq
+    volumes:
+      - .:/work
+    tty: true
