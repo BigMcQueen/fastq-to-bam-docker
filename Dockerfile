@@ -4,24 +4,25 @@ ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update && apt install -y \
-    wget \
-    curl \
-    vim \
-    default-jre \
-    hisat2 \
     build-essential \
-    libncurses5-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    liblzma-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
+    curl \
+    default-jre \
     gcc \
-    make
+    hisat2 \
+    libbz2-dev \
+    libcurl4-openssl-dev \
+    liblzma-dev \
+    libncurses5-dev \
+    libssl-dev \
+    make \
+    vim \
+    wget \
+    zlib1g-dev
+
 
 WORKDIR /opt
 RUN wget --no-check-certificate http://opengene.org/fastp/fastp
-RUN chmod a+x /opt/fastp && ln -s /opt/fastp /usr/local/bin/fastp
+RUN ln -s /opt/fastp /usr/local/bin/fastp
 
 RUN wget --no-check-certificate https://github.com/samtools/samtools/releases/download/1.15.1/samtools-1.15.1.tar.bz2
 RUN tar -xvf samtools-1.15.1.tar.bz2 && rm -rf samtools-1.15.1.tar.bz2
