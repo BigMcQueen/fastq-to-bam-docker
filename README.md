@@ -1,4 +1,4 @@
-# fastq-to-bam-docker
+# fastq2bam-docker
 ## Project Title
 FASTQデータをBAMファイルにするためのツールが詰まったDockerコンテナを作成できます。
 ## Getting Started
